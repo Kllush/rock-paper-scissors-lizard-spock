@@ -6,76 +6,97 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-        <script src="index.js"></script>
     </head>
     <body>
-    <div class="titleContainer">
-        <div class="logo"></div>
-        <div class="scoreCard">
-            <div class="scoreCardContent">
-                <p class="heading-s-score blue">SCORE</p>
-                <span class="body-s-score darkgray" id="score">12</span>
+        <div class="rulesContainer hideRules" id="rulesContainer">
+            <div class="rulesBackground"></div>
+            <div class="rulesCard">
+                <p class="heading-rules dark">RULES</p>
+                <button class="closeButton" id="closeBTN"></button>
+                <img src="../assets/image-rules-bonus.svg" alt="rules" width="340" height="330">
             </div>
         </div>
-    </div>
-    <div class="gameContainer">
-        <div class="gameBackground"></div>
-        <div class="gameToken topcenter">
-            <div class="tokenShadow" id="scissors">
-                <div class="tokenFace">
-                    <img src="../assets/icon-scissors.svg" alt="scissors icon" width="34" height="38">
+        <div class="mainContainer">
+            <div class="titleContainer">
+                <div class="logo"></div>
+                <div class="scoreCard">
+                    <div class="scoreCardContent">
+                        <p class="heading-s-score blue" id="scoreHeading">SCORE</p>
+                        <p class="body-s-score darkgray" id="score"></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="gameToken topright">
-            <div class="tokenShadow" id="paper">
-                <div class="tokenFace">
-                    <img src="../assets/icon-paper.svg" alt="scissors icon" width="33" height="39">
+            <div class="pentagonGameContainer" id="gameOptionsScreen">
+                <button class="gameToken topcenter" id="scissors">
+                    <div class="tokenShadow" id="scissorsShadow">
+                        <div class="tokenFace">
+                            <img src="../assets/icon-scissors.svg" alt="scissors icon" width="34" height="38">
+                        </div>
+                    </div>
+                </button>
+                <button class="gameToken topright" id="paper">
+                    <div class="tokenShadow" id="paperShadow">
+                        <div class="tokenFace">
+                            <img src="../assets/icon-paper.svg" alt="paper icon" width="33" height="39">
+                        </div>
+                    </div>
+                </button>
+                <button class="gameToken topleft" id="spock">
+                    <div class="tokenShadow" id="spockShadow">
+                        <div class="tokenFace">
+                            <img src="../assets/icon-spock.svg" alt="spock icon" width="30" height="39">
+                        </div>
+                    </div>
+                </button>
+                <button class="gameToken bottomright" id="rock">
+                    <div class="tokenShadow" id="rockShadow">
+                        <div class="tokenFace">
+                            <img src="../assets/icon-rock.svg" alt="rock icon" width="32" height="31">
+                        </div>
+                    </div>
+                </button>
+                <button class="gameToken bottomleft" id="lizard">
+                    <div class="tokenShadow" id="lizardShadow">
+                        <div class="tokenFace">
+                            <img src="../assets/icon-lizard.svg" alt="lizard icon" width="42" height="40">
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="gameResults" id="gameResultsScreen">
+                <div class="gameFinalResults">
+                    <div class="playerChoice">
+                        <button class="gameToken mediumsize" id=playerChoice>
+                            <div class="tokenShadow" id="playerShadow">
+                                <div class="tokenFace">
+                                    <img src="../assets/icon-scissors.svg" alt="scissors icon" width="34" height="38" id="userIcon">
+                                </div>
+                            </div>
+                        </button>
+                        <p class="body-s light" id="playerHeading">YOU PICKED</p>
+                    </div>
+                    <div class="houseChoice">
+                        <button class="gameToken mediumSize" id=houseChoice>
+                            <div class="tokenShadow" id="houseShadow">
+                                <div class="tokenFace">
+                                    <img src="../assets/icon-rock.svg" alt="scissors icon" width="32" height="31" id="houseIcon">
+                                </div>
+                            </div>
+                        </button>
+                        <p class="body-s light" id="houseHeading">THE HOUSE PICKED</p>
+                    </div>
+                </div>
+                <div class="playAgainContainer">
+                    <p class = "heading-m light"id="result"></p>
+                    <div>
+                        <button class="playAgain footer-m" id="playAgainBTN">PLAY AGAIN</button>
+                    </div>
                 </div>
             </div>
+            <button class="rulesButton footer-m light" id="rulesBTN">RULES</button>
         </div>
-        <div class="gameToken topleft">
-            <div class="tokenShadow" id="spock">
-                <div class="tokenFace">
-                    <img src="../assets/icon-spock.svg" alt="scissors icon" width="30" height="39">
-                </div>
-            </div>
-        </div>
-        <div class="gameToken bottomright">
-            <div class="tokenShadow" id="rock">
-                <div class="tokenFace">
-                    <img src="../assets/icon-rock.svg" alt="scissors icon" width="32" height="31">
-                </div>
-            </div>
-        </div>
-        <div class="gameToken bottomleft">
-            <div class="tokenShadow" id="lizard">
-                <div class="tokenFace">
-                    <img src="../assets/icon-lizard.svg" alt="scissors icon" width="42" height="40">
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="rulesContainer">
-        <button class="footer-m light">RULES</button>
-    </div>
     </body>
+    <footer>
+        <script src="index.js"></script>
+    </footer>
 </html>
-
-<!--
-10 semibold blue
-
-15 bold white
-
-16 semibold dark
-16 semibold white
-
-24 bold white
-
-32 bold dark
-
-40 bold darkgray
-
-56 bold white
--->
