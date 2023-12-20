@@ -13,24 +13,18 @@ const rulesBTN = document.getElementById("rulesBTN");
 const rulesEl = document.getElementById("rulesContainer");
 const closeBTN = document.getElementById("closeBTN");
 
+const mediaQuerie_cons = window.matchMedia("(max-width: 600px)")
+
 let userScore = 0;
 scoreEl.innerHTML = userScore;
 
 function switchResultsScreen() {
     gameOptionsScreen.style.display = "none";
-    gameResultsScreen.style.display = "block";
+    gameResultsScreen.style.display = "inline-grid";
 }
 function switchOptionsScreen() {
     gameOptionsScreen.style.display = "flex";
     gameResultsScreen.style.display = "none";
-}
-function openRules() {
-    rulesEl.classList.add("showRules");
-    rulesEl.classList.remove("hideRules");
-}
-function closeRules() {
-    rulesEl.classList.add("hideRules");
-    rulesEl.classList.remove("showRules");
 }
 function win() {
     userScore++;
@@ -182,11 +176,10 @@ function game(userChoice){
     }
     userChoiceToken(userChoice);
     computerChoiceToken(computerChoice);
+    fontMediaQueries();
 }
 
-const mediaQuerie_cons = window.matchMedia("(max-width: 600px)")
-
-function mediaQueries() {
+function fontMediaQueries() {
     const playerHeadingEl = document.getElementById("playerHeading");
     const computerHeadingEl = document.getElementById("houseHeading");
 
@@ -220,7 +213,7 @@ function mediaQueries() {
     }
 
 mediaQuerie_cons.addEventListener("change", function() {
-    mediaQueries();
+    fontMediaQueries();
   });
 
 function main() {
@@ -248,12 +241,11 @@ function main() {
         switchOptionsScreen();
     })
     rulesBTN.addEventListener("click", function() {
-        openRules();
+        rulesEl.style.display = "flex";
     })
     closeBTN.addEventListener("click", function() {
-        closeRules();
+        rulesEl.style.display = "none";
     })
 }
 
 main();
-mediaQueries();
