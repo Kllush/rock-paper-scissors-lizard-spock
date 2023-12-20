@@ -12,8 +12,8 @@
             <div class="rulesBackground"></div>
             <div class="rulesCard">
                 <p class="heading-rules dark">RULES</p>
-                <button class="closeButton" id="closeBTN"></button>
                 <img src="../assets/image-rules-bonus.svg" alt="rules" width="340" height="330">
+                <button class="closeButton" id="closeBTN"></button>
             </div>
         </div>
         <div class="mainContainer">
@@ -63,36 +63,37 @@
                     </div>
                 </button>
             </div>
+            
             <div class="gameResults" id="gameResultsScreen">
-                <div class="gameFinalResults">
-                    <div class="playerChoice">
-                        <button class="gameToken mediumsize" id=playerChoice>
-                            <div class="tokenShadow" id="playerShadow">
-                                <div class="tokenFace">
-                                    <img src="../assets/icon-scissors.svg" alt="scissors icon" width="34" height="38" id="userIcon">
-                                </div>
+                <div class="playerChoice">
+                    <div class="gameToken mediumsize" id=playerChoice>
+                        <div class="tokenShadow" id="playerShadow">
+                            <div class="tokenFace">
+                                <img src="../assets/icon-scissors.svg" alt="scissors icon" width="34" height="38" id="userIcon">
                             </div>
-                        </button>
-                        <p class="body-s light" id="playerHeading">YOU PICKED</p>
+                        </div>
                     </div>
-                    <div class="houseChoice">
-                        <button class="gameToken mediumSize" id=houseChoice>
-                            <div class="tokenShadow" id="houseShadow">
-                                <div class="tokenFace">
-                                    <img src="../assets/icon-rock.svg" alt="scissors icon" width="32" height="31" id="houseIcon">
-                                </div>
-                            </div>
-                        </button>
-                        <p class="body-s light" id="houseHeading">THE HOUSE PICKED</p>
-                    </div>
+                    <p class="body-s light" id="playerHeading">YOU PICKED</p>
                 </div>
-                <div class="playAgainContainer">
-                    <p class = "heading-m light"id="result"></p>
-                    <div>
-                        <button class="playAgain footer-m" id="playAgainBTN">PLAY AGAIN</button>
+                <div class="houseChoice">
+                    <div class="gameTokenWait"></div>
+                    <div class="gameToken mediumSize Anim--unvanish" id=houseChoice>
+                        <div class="tokenShadow" id="houseShadow">
+                            <div class="tokenFace">
+                                <img src="../assets/icon-rock.svg" alt="scissors icon" width="32" height="31" id="houseIcon">
+                            </div>
+                        </div>
                     </div>
+                    <p class="body-s light" id="houseHeading">THE HOUSE PICKED</p>
+                </div>
+                <div class="playAgainContainer Anim--unvanishFaster">
+                    <p class = "heading-m light"id="result"></p>
+                    <button class="playAgain footer-m" id="playAgainBTN">
+                        <p>PLAY AGAIN</p>
+                    </button>
                 </div>
             </div>
+            
             <button class="rulesButton footer-m light" id="rulesBTN">RULES</button>
         </div>
     </body>
